@@ -1,16 +1,15 @@
 {
   "name": "smart-student-manager",
-  "homepage": "https://DevendraSangwan.github.io/Smart-Student-Manager",
+  "homepage": "https://devendrasangwan.github.io/Smart-Student-Manager/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
-"deploy": "gh-pages -d dist",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.2.5",
