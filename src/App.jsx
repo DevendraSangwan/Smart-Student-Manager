@@ -9,6 +9,7 @@ function App() {
 
  const [tasks, setTasks] = useState([
   {
+    
     text: "Complete React JSX notes",
     completed: false,
   },
