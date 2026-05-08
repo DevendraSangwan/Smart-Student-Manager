@@ -1,65 +1,39 @@
 import { useState } from "react";
-
 function TodoList({ tasks, setTasks, deleteTask }) {
-
   const [editIndex, setEditIndex] = useState(null);
   const [editText, setEditText] = useState("");
-
   // TOGGLE COMPLETE
-
   const toggleComplete = (index) => {
-
     const updatedTasks = [...tasks];
-
     updatedTasks[index].completed =
       !updatedTasks[index].completed;
-
     setTasks(updatedTasks);
   };
-
   // START EDIT
-
   const startEdit = (index, text) => {
-
     setEditIndex(index);
-
     setEditText(text);
   };
-
   // SAVE EDIT
-
   const saveEdit = (index) => {
-
     const updatedTasks = [...tasks];
-
     updatedTasks[index].text = editText;
-
     setTasks(updatedTasks);
-
     setEditIndex(null);
-
     setEditText("");
   };
-
   return (
-
     <div className="todo-box">
-
       <h3>Todo List (.map())</h3>
-
       {
         tasks.map((task, index) => (
-
           <div className="task" key={index}>
-
             <div className="task-left">
-
               <input
                 type="checkbox"
                 checked={task.completed}
                 onChange={() => toggleComplete(index)}
               />
-
               {
                 editIndex === index
                 ?
@@ -80,11 +54,8 @@ function TodoList({ tasks, setTasks, deleteTask }) {
                   {task.text}
                 </p>
               }
-
             </div>
-
             <div className="task-buttons">
-
               {
                 editIndex === index
                 ?
@@ -104,20 +75,16 @@ function TodoList({ tasks, setTasks, deleteTask }) {
                   ✏️
                 </button>
               }
-
               <button
                 className="delete-btn"
                 onClick={() => deleteTask(index)}
               >
                 ❌
               </button>
-
             </div>
-
           </div>
         ))
       }
-
     </div>
   );
 }
